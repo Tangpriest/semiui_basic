@@ -12,13 +12,13 @@ const LayoutPage = () => {
         console.log(screen, bool);
     };
     const commonStyle = {
-        height: 64,
+        height    : 64,
         lineHeight: '64px',
         background: 'var(--semi-color-bg-1)',
     };
     const { Footer, Sider, Content } = Layout;
     return (
-        <Layout className="components-layout-demo">
+        <Layout className = "components-layout-demo">
             <CustomHeader />
             <Layout>
                 <Sider
@@ -26,15 +26,15 @@ const LayoutPage = () => {
                         background: 'var(--semi-color-bg-1)',
                         // borderRight: '1px solid var(--semi-color-border)',
                     }}
-                    breakpoint={['md']}
-                    onBreakpoint={onbreakpoint}
+                    breakpoint   = {['md']}
+                    onBreakpoint = {onbreakpoint}
                 >
                     <Navigation />
                 </Sider>
                 <Content style={{
-                    height: `calc(100vh - 64px)`,
+                    height         : `calc(100vh - 64px)`,
                     backgroundColor: 'var(--semi-color-bg-0)',
-                    lineHeight: '300px'
+                    lineHeight     : '300px'
                 }}>
                     <Outlet />
                 </Content>

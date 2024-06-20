@@ -1,11 +1,17 @@
+import { IconLanguage } from '@douyinfe/semi-icons';
 import { IconDarkMode } from '@douyinfe/semi-icons-lab';
 import { Avatar, Col, Layout, Row, Space } from '@douyinfe/semi-ui';
 import Text from '@douyinfe/semi-ui/lib/es/typography/text';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { setUserLanguagePreference } from '../../i18n';
 import Logo from './Logo';
 
-
 const CustomHeader = () => {
+
+  const { t, i18n } = useTranslation();
+
+  console.log(t)
   const { Header }  = Layout;
   const commonStyle = {
     height      : 64,
@@ -46,7 +52,7 @@ const CustomHeader = () => {
         }}>
           <Space size = {10}>
             <Logo />
-            <Text style = {{ fontSize: 18 }}>项目名称</Text>
+            <Text style = {{ fontSize: 18 }}>{t('page_login.button_login')}</Text>
           </Space>
         </Col>
         <Col span={12} style={{
@@ -57,6 +63,10 @@ const CustomHeader = () => {
           paddingRight  : 20,
         }}>
           <Space size = {20}>
+          <IconLanguage color='var(--semi-color-text-1)' size='extra-large' onClick={()=>{
+            setUserLanguagePreference()
+          }} />
+          <Text>{i18n.language}</Text>
           {/* <Dropdown
                 position = {'bottomLeft'}
                 render   = {

@@ -6,18 +6,22 @@ import {
   BrowserRouter as Router,
   Routes
 } from 'react-router-dom';
+import i18n from './i18n';
 
 import { Typography } from '@douyinfe/semi-ui';
+import { I18nextProvider } from 'react-i18next';
+import Dashboard from './pages/Dashboard/Dashboard';
 import LayoutPage from './pages/Dashboard/Layout';
 import LoginPage from './pages/Login/LoginPage';
 const { Text } = Typography;
 
 
+
 const Page1      = () => <Text>Page1</Text>;
 const Page2      = () => <Text>Page2</Text>;
-const Dashboard  = () => <Text>Dashboard</Text>;
+// const Dashboard  = () => <Text>Dashboard</Text>;
 
-const App = () => {
+const Main = () => {
   return (
     <Router>
         <Routes>
@@ -33,4 +37,10 @@ const App = () => {
   );
 };
 
-export default App;
+export default function App(){
+  return (
+    <I18nextProvider i18n={i18n}>
+      <Main />
+    </I18nextProvider>
+  );
+};
