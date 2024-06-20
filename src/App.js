@@ -8,15 +8,14 @@ import {
 } from 'react-router-dom';
 
 import { Typography } from '@douyinfe/semi-ui';
-import LayoutPage from './Layout/Layout';
-import LoginPage from './Pages/Login/Login';
+import LayoutPage from './pages/Dashboard/Layout';
+import LoginPage from './pages/Login/LoginPage';
 const { Text } = Typography;
 
-const Home      = () => <Text>Home</Text>;
-const About     = () => <Text>About</Text>;
-const Users     = () => <Text>Users</Text>;
-const Dashboard = () => <Text>Dashboard</Text>;
-const Settings  = () => <Text>Settings</Text>;
+
+const Page1      = () => <Text>Page1</Text>;
+const Page2      = () => <Text>Page2</Text>;
+const Dashboard  = () => <Text>Dashboard</Text>;
 
 const App = () => {
   return (
@@ -26,9 +25,8 @@ const App = () => {
           <Route path          = "/login" element     = {<LoginPage />} />
           <Route path          = "/dashboard" element = {<LayoutPage />}>
           <Route index element = {<Dashboard />} />
-          <Route path          = "about" element      = {<About />} />
-          <Route path          = "users" element      = {<Users />} />
-          <Route path          = "settings" element   = {<Settings />} />
+            <Route path          = "page1" element      = {<Page1 />} />
+            <Route path          = "page2" element      = {<Page2 />} />
           </Route>
         </Routes>
     </Router>

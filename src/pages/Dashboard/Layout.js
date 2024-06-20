@@ -2,8 +2,8 @@
 import { Layout, Typography } from '@douyinfe/semi-ui';
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import CustomHeader from './Components/Header';
-import Navigation from './Components/Navigation';
+import CustomHeader from '../../components/common/Header';
+import Navigation from '../../components/common/Navigation';
 
 const { Text } = Typography;
 

@@ -2,7 +2,7 @@ import { IconDarkMode } from '@douyinfe/semi-icons-lab';
 import { Avatar, Col, Layout, Row, Space } from '@douyinfe/semi-ui';
 import Text from '@douyinfe/semi-ui/lib/es/typography/text';
 import React from 'react';
-import Logo from '../../Components/Logo';
+import Logo from './Logo';
 
 
 const CustomHeader = () => {
