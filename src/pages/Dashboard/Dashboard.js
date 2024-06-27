@@ -1,5 +1,5 @@
-import { IconMore, IconPlus } from '@douyinfe/semi-icons';
-import { Avatar, Button, Space, Table } from '@douyinfe/semi-ui';
+import { IconMore } from '@douyinfe/semi-icons';
+import { Avatar, Table } from '@douyinfe/semi-ui';
 import React from 'react';
 
 export default function Dashboard() {
@@ -89,10 +89,10 @@ export default function Dashboard() {
           flexDirection : 'column',
           justifyContent: 'flex-start'
         }}>
-            <Space  size = {20}>
+            {/* <Space  size = {20}>
             <Button icon={<IconPlus />} theme='light' type='primary' style={{ marginRight: 8 }}>创建海缸</Button>
-            </Space>    
-            <Table columns = {columns} dataSource = {data} pagination = {false} />;
+            </Space>     */}
+            <Table columns = {columns} dataSource = {data} pagination = {false} />
         </div>
     )
 }
