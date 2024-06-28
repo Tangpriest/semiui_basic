@@ -12,11 +12,11 @@ const CustomHeader = () => {
   const { t, i18n } = useTranslation();
 
   console.log(t)
-  const { Header }  = Layout;
+  const { Header } = Layout;
   const commonStyle = {
-    height      : 64,
-    lineHeight  : '64px',
-    background  : 'var(--semi-color-bg-1)',
+    height: 64,
+    lineHeight: '64px',
+    background: 'var(--semi-color-bg-1)',
     borderBottom: '1px solid var(--semi-color-border)',
 
   };
@@ -41,33 +41,33 @@ const CustomHeader = () => {
   }
 
   return (
-    <Header style = {commonStyle}>
+    <Header style={commonStyle}>
       <Row>
         <Col span={12} style={{
           paddingLeft: 20,
-          color      : 'var(--semi-color-text-1)',
-          display    : 'flex',
-          alignItems : 'center',
-          height     : '64px',
+          color: 'var(--semi-color-text-1)',
+          display: 'flex',
+          alignItems: 'center',
+          height: '64px',
         }}>
-          <Space size = {10}>
+          <Space size={10}>
             <Logo />
-            <Text style = {{ fontSize: 18 }}>{t('page_login.button_login')}</Text>
+            <Text style={{ fontSize: 18, fontWeight: 600 }}>{t('company')}</Text>
           </Space>
         </Col>
         <Col span={12} style={{
-          display       : 'flex',
+          display: 'flex',
           justifyContent: 'flex-end',
-          alignItems    : 'center',
-          height        : '64px',
-          paddingRight  : 20,
+          alignItems: 'center',
+          height: '64px',
+          paddingRight: 20,
         }}>
-          <Space size = {20}>
-          <IconLanguage color='var(--semi-color-text-1)' size='extra-large' onClick={()=>{
-            setUserLanguagePreference()
-          }} />
-          <Text>{i18n.language}</Text>
-          {/* <Dropdown
+          <Space size={20}>
+            <IconLanguage color='var(--semi-color-text-1)' size='extra-large' onClick={() => {
+              setUserLanguagePreference()
+            }} />
+            <Text>{i18n.language}</Text>
+            {/* <Dropdown
                 position = {'bottomLeft'}
                 render   = {
                     <Dropdown.Menu>
@@ -79,14 +79,14 @@ const CustomHeader = () => {
             >
                 <Tag>威奢煤矿</Tag>
           </Dropdown> */}
-          <IconDarkMode
-            size    = 'extra-large'
-            onClick = {switchMode} style = {{ cursor: 'pointer' }} />
+            <IconDarkMode
+              size='extra-large'
+              onClick={switchMode} style={{ cursor: 'pointer' }} />
 
-          <Avatar color = "light-blue" size = "small" alt = 'Taylor Joy'>
-            TJ
-          </Avatar>
-          <Text onClick={quit}>Taylor Joy</Text>
+            <Avatar color="light-blue" size="small" alt='Taylor Joy'>
+              TJ
+            </Avatar>
+            <Text onClick={quit}>Taylor Joy</Text>
           </Space>
         </Col>
       </Row>

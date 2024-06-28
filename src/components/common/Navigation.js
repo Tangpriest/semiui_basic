@@ -1,12 +1,32 @@
-import { IconBadge, IconForm } from '@douyinfe/semi-icons-lab';
+import { IconBadge } from '@douyinfe/semi-icons-lab';
 import { Nav } from '@douyinfe/semi-ui';
 import React, { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
+
+
 export default function Navigation(props = {}) {
 
   const { t, i18n } = useTranslation();
+
+  const MenuLists = [
+    {
+      itemKey: 'dashboard',
+      text   : t('component_navigation.dashboard'),
+      icon   : <IconBadge />,
+      items  : [
+        {
+          itemKey: 'dashboard_overview',
+          text   : t('component_navigation.dashboard_overview'),
+        },
+        {
+          itemKey: 'dashboard_single',
+          text   : t('component_navigation.dashboard_single'),
+        }
+      ]
+    }
+  ]
 
   const [openKeys, setOpenKeys]         = useState(['union-management', 'job']);
   const [selectedKeys, setSelectedKeys] = useState(['公告设置']);
@@ -25,22 +45,13 @@ export default function Navigation(props = {}) {
     setIsCollapsed(isCollapsed);
   };
 
-  const items = useMemo(() => [
-    { itemKey: 'Home', text: t('component_navigation.item_1'), icon: <IconBadge /> },
-    { itemKey: 'About', text: t('component_navigation.item_2'), icon: <IconForm /> },
-    {
-      itemKey: 'Sub',
-      text   : '目录三',
-      icon   : <IconForm />,
-      items  : ['Dashboard', 'Nothing Here']
-    }
-  ], [t]);
+  const items = useMemo(() => MenuLists, [t]);
 
   const routerMap = {
-    Home          : "/",
-    About         : "/dashboard/about",
-    Dashboard     : "/dashboard",
-    "Nothing Here": "/nothing-here"
+    dashboard         : "/dashboard",
+    dashboard_overview: "/dashboard/overview",
+    dashboard_sigle   : "/dashboard/single",
+    "Nothing Here"    : "/nothing-here"
   };
 
   return (
@@ -58,7 +69,7 @@ export default function Navigation(props = {}) {
       renderWrapper    = {({ itemElement, isSubNav, isInSubNav, props }) => {
         const itemStyle = {
           padding: '0px 0px',   // 增加内边距
-          margin : '5px 0',       // 增加外边距
+          margin : '5px 0',     // 增加外边距
           display: 'block',
         };
         return (
